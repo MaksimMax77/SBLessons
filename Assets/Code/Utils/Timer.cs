@@ -4,7 +4,7 @@ namespace Code.Utils
     {
         private float _destinationTime;
         private float _currentTime;
-        private bool _isInitialized; 
+        private bool _isInitialized;
 
         public bool IsEnd => _currentTime >= _destinationTime;
 
@@ -14,11 +14,12 @@ namespace Code.Utils
             {
                 return;
             }
+            
             _destinationTime = destinationTime;
             _currentTime = destinationTime;
             _isInitialized = true;
         }
-
+        
         public void Update(float deltaTime)
         {
             if (IsEnd)
@@ -33,7 +34,7 @@ namespace Code.Utils
             _currentTime = _destinationTime;
         }
 
-        public void SetTimeZero()
+        public void Restart()
         {
             _currentTime = 0;
         }

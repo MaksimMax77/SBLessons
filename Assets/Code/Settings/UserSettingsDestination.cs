@@ -9,7 +9,6 @@ namespace Code.Settings
         public UserSettingsDestination(IUserUnitSettings settings)
         {
             _settings = settings;
-            Debug.LogError(_settings.GetType().Name);
         }
     }
 }

@@ -1,4 +1,4 @@
-using Code.AbilityCommands;
+using Code.ComponentActions.AbilityActions;
 using Code.Input;
 using Code.Utils;
 using Unity.Entities;
@@ -36,9 +36,9 @@ namespace Code.Shoot
                     return;
                 }
 
-                var command = EntityManager.GetComponentObject<ShootCommand>(entity);
+                var command = EntityManager.GetComponentObject<ShootAbility>(entity);
                 command.Execute();
-                _timer.SetTimeZero();
+                _timer.Restart();
             });
         }
     }

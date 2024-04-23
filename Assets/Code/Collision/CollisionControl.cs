@@ -1,5 +1,6 @@
 using System.Collections.Generic;
-using Code.Collision.Actions;
+using Code.ComponentActions;
+using Code.ComponentActions.CollisionActions;
 using Code.Utils;
 using Unity.Entities;
 using Unity.Mathematics;
@@ -10,14 +11,18 @@ namespace Code.Collision
     public class CollisionControl : MonoBehaviour, IConvertGameObjectToEntity
     {
         [SerializeField] private Collider _collider;
-        [SerializeField] private CollisionAction[] _actions;
-        public List<Collider> Collisions { get; set; }
-        public void OnCollisionCheck()
-        {
+        [SerializeField] private ComponentAction[] _actions;
+        public List<Collider> Colliders { get; set; }
+
+        public void ExecuteActions()
+        {  
             for (int i = 0, len = _actions.Length; i < len; ++i)
             {
-                _actions[i].SetGameObject(gameObject);
-                _actions[i].Execute(Collisions);
+                if (_actions[i] is CollisionAction collisionAction)
+                {
+                    collisionAction.SetColliders(Colliders);
+                }
+                _actions[i].Execute();
             }
         }
 

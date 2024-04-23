@@ -7,8 +7,7 @@ namespace Code.AiUtilitySystem
     public class AiAgentAuthoring : MonoBehaviour, IConvertGameObjectToEntity
     {
        [SerializeField] private BehaviorData[] _behaviors;
-       
-        public void Convert(Entity entity, EntityManager dstManager, GameObjectConversionSystem conversionSystem)
+       public void Convert(Entity entity, EntityManager dstManager, GameObjectConversionSystem conversionSystem)
         {
             dstManager.AddComponentObject(entity, new AiAgentData()
             {

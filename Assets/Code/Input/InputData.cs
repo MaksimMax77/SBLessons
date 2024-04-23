@@ -9,5 +9,6 @@ namespace Code.Input
     {
         [HideInInspector] public float2 moveStickDirection;
         [HideInInspector] public bool isShootButtonClick;
+        [HideInInspector] public bool isShieldAbilityButtonClick;
     }
 }

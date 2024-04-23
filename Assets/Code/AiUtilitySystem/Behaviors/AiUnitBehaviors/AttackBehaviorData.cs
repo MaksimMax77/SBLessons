@@ -59,7 +59,7 @@ namespace Code.AiUtilitySystem.Behaviors.AiUnitBehaviors
                     return;
                 }
                 _targetHealth.GetDamage(_behaviorData._damage);
-                _timer.SetTimeZero();
+                _timer.Restart();
             }
         }
     }

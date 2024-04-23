@@ -33,7 +33,7 @@ namespace Code.Collision
                         return;
                     }
 
-                    collisionControl.Collisions?.Clear();
+                    collisionControl.Colliders?.Clear();
 
                     int size = 0;
 
@@ -64,8 +64,8 @@ namespace Code.Collision
 
                     if (size > 0)
                     {
-                        collisionControl.Collisions = GetColliders().ToList();
-                        collisionControl.OnCollisionCheck();
+                        collisionControl.Colliders = GetColliders().ToList();
+                        collisionControl.ExecuteActions();
                     }
                 });
         }
@@ -73,7 +73,6 @@ namespace Code.Collision
         private IEnumerable<Collider> GetColliders()
         {
             var colliders = new List<Collider>();
-            
             for (int i = 0, len = _results.Length; i < len; ++i)
             {
                 if (_results[i] == null)
@@ -82,7 +81,6 @@ namespace Code.Collision
                 }
                 colliders.Add(_results[i]);
             }
-
             return colliders;
         }
     }
