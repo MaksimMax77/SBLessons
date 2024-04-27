@@ -80,17 +80,6 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""da1f15a7-ae67-43e9-afbc-7d994150889c"",
-                    ""path"": ""<Mouse>/leftButton"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Shoot"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
                     ""id"": ""6bc92e3c-6c5c-41e4-87a3-0af0b1aa8752"",
                     ""path"": ""<Gamepad>/buttonNorth"",
                     ""interactions"": """",

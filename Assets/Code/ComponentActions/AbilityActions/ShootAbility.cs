@@ -1,4 +1,6 @@
-using Code.Shoot;
+using Code.Pool;
+using Code.Projectiles;
+using Code.Utils;
 using UnityEngine;
 
 namespace Code.ComponentActions.AbilityActions
@@ -7,11 +9,19 @@ namespace Code.ComponentActions.AbilityActions
     {
         [SerializeField] private Projectile _projectilePrefab;
         [SerializeField] private Transform _creationPoint;
+        [SerializeField] private float _lifeTime;
+        private ObjectsPool _objectsPool;
 
+        public void SetPool(ObjectsPool pool)
+        {
+            _objectsPool = pool;
+        }
         public override void Execute()
         {
-            var projectile = Instantiate(_projectilePrefab, _creationPoint.position, Quaternion.identity);
-            projectile.Move(transform.forward);
+            var projectile  = _objectsPool.GetOrCreateObject(_projectilePrefab);
+            projectile.transform.position = _creationPoint.position;
+            projectile.transform.rotation = Quaternion.identity;
+            projectile.AddForce(transform.forward);
         }
     }
 }

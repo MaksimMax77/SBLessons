@@ -1,14 +1,12 @@
-using System.Collections.Generic;
-using UnityEngine;
-
 namespace Code.ComponentActions.CollisionActions
 {
     public abstract class CollisionAction : ComponentAction
     {
-        protected List<Collider> _collisions;
-        public void SetColliders(List<Collider> collisions)
+        protected UnityEngine.Collision collision;
+
+        public void SetCollision(UnityEngine.Collision collision)
         {
-            _collisions = collisions;
+            this.collision = collision;
         }
     }
 }

@@ -16,7 +16,6 @@ namespace Code.Utils
             }
             
             _destinationTime = destinationTime;
-            _currentTime = destinationTime;
             _isInitialized = true;
         }
         

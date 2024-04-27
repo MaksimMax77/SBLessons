@@ -13,6 +13,7 @@ namespace Code.ComponentActions.AbilityActions
         {
             _timer = new Timer();
             _timer.Init(_workTime);
+            _timer.SetMaxValue();
         }
 
         public void RestartTimerIfIsEnd()
