@@ -12,12 +12,7 @@ namespace Code.Projectiles
         {
             _rigidbody.AddForce(direction * _movePower);
         }
-
-        private void OnEnable()
-        {
-           
-        }
-
+        
         private void OnDisable()
         {
             _rigidbody.isKinematic = true;
